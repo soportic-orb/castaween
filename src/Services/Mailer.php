@@ -175,7 +175,12 @@ final class Mailer
     {
         // Els gestors de correu no apliquen fulls d'estil: l'enllaç ha de
         // portar el color a dins.
-        return Str::toHtmlParagraphs($text, 'style="color:#8C1027;"');
+        $color = (string) Settings::get('brand_primary');
+        if (preg_match('/^#[0-9a-fA-F]{6}$/', $color) !== 1) {
+            $color = '#2B1640';
+        }
+
+        return Str::toHtmlParagraphs($text, 'style="color:' . $color . ';"');
     }
 
     private function toPlainText(string $html): string

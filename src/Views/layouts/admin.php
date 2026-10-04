@@ -37,7 +37,7 @@ try {
 
 <aside class="admin-side">
     <a class="admin-side__brand" href="<?= e(url('/admin')) ?>">
-        <span class="admin-side__mark" aria-hidden="true">PH</span>
+        <span class="admin-side__mark"><?= spooky_icon('pumpkin') ?></span>
         <span>
             <strong>Panell de Gestió</strong>
             <small><?= e(\App\Core\Str::limit((string) Settings::get('event_name'), 28)) ?></small>

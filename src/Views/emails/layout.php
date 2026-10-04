@@ -7,6 +7,7 @@ $primary = (string) Settings::get('brand_primary');
 $accent  = (string) Settings::get('brand_accent');
 $cream   = (string) Settings::get('brand_cream');
 $ink     = (string) Settings::get('brand_ink');
+$secondary = (string) Settings::get('brand_secondary');
 ?>
 <!DOCTYPE html>
 <html lang="ca">
@@ -22,8 +23,8 @@ $ink     = (string) Settings::get('brand_ink');
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06);">
 
                 <tr>
-                    <td style="background:<?= e($primary) ?>;padding:26px 30px;border-bottom:4px solid <?= e($accent) ?>;">
-                        <div style="color:<?= e($cream) ?>;font-size:19px;font-weight:800;line-height:1.3;">
+                    <td style="background:<?= e($ink) ?>;background-image:linear-gradient(180deg,<?= e($ink) ?>,<?= e($primary) ?>);padding:26px 30px;border-bottom:4px solid <?= e($secondary) ?>;">
+                        <div style="color:<?= e($secondary) ?>;font-size:20px;font-weight:800;line-height:1.3;">
                             <?= e(Settings::get('event_name')) ?>
                         </div>
                         <div style="color:<?= e($accent) ?>;font-size:14px;font-weight:600;margin-top:4px;">
@@ -43,9 +44,9 @@ $ink     = (string) Settings::get('brand_ink');
                         <?php foreach (($buttons ?? []) as $button): ?>
                             <table role="presentation" cellpadding="0" cellspacing="0" style="margin:22px 0;">
                                 <tr>
-                                    <td style="background:<?= e((string) Settings::get('brand_secondary')) ?>;border-radius:999px;">
+                                    <td style="background:<?= e($secondary) ?>;border-radius:999px;">
                                         <a href="<?= e($button['url']) ?>"
-                                           style="display:inline-block;padding:13px 28px;color:#ffffff;text-decoration:none;font-weight:700;font-size:15px;">
+                                           style="display:inline-block;padding:13px 28px;color:<?= e($ink) ?>;text-decoration:none;font-weight:800;font-size:15px;">
                                             <?= e($button['label']) ?>
                                         </a>
                                     </td>

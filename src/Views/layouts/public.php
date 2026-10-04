@@ -15,7 +15,7 @@ use App\Core\View;
             <?php if (($logo = (string) Settings::get('event_logo')) !== ''): ?>
                 <img class="site-header__logo" src="<?= e(url($logo)) ?>" alt="">
             <?php else: ?>
-                <span class="site-header__mark" aria-hidden="true">P</span>
+                <span class="site-header__mark"><?= spooky_icon('pumpkin') ?></span>
             <?php endif; ?>
             <span class="site-header__title">
                 <?= e(Settings::get('event_name')) ?>

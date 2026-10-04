@@ -88,7 +88,7 @@ final class CampaignController
             'campaign'   => $campaign,
             'filters'    => $filters,
             'recipients' => $campaign['status'] === 'draft' ? $this->recipients($filters) : [],
-            'preview'    => $this->renderBody($campaign, ['name' => 'Marta', 'reference' => 'PDSH-XXXXXX']),
+            'preview'    => $this->renderBody($campaign, ['name' => 'Marta', 'reference' => 'CT-XXXXXX']),
             'queue'      => Db::first(
                 "SELECT COUNT(*) AS total,
                         SUM(`status` = 'sent') AS enviats,
@@ -117,7 +117,7 @@ final class CampaignController
             $to,
             null,
             '[PROVA] ' . $campaign['subject'],
-            $this->renderBody($campaign, ['name' => 'Marta', 'reference' => 'PDSH-XXXXXX'])
+            $this->renderBody($campaign, ['name' => 'Marta', 'reference' => 'CT-XXXXXX'])
         );
 
         $sent

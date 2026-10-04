@@ -1,4 +1,4 @@
-# Desplegament a CloudPanel · poudeshorta.online
+# Desplegament a CloudPanel · castanyadaterrorifica.cat
 
 Guia pas a pas per posar la plataforma en marxa en un VPS compartit amb
 CloudPanel. Compteu-hi uns 30 minuts la primera vegada.
@@ -9,12 +9,12 @@ CloudPanel. Compteu-hi uns 30 minuts la primera vegada.
 
 1. **Sites → Add Site → Create a PHP Site**
 2. Ompliu:
-   - *Domain Name*: `poudeshorta.online`
-   - *Site Title*: Inscripcions Pou de s'Horta
+   - *Domain Name*: `castanyadaterrorifica.cat`
+   - *Site Title*: Inscripcions Castanyada terrorífica
    - *PHP Version*: **8.2** o superior
-   - *Site User*: per exemple `poudeshorta`
+   - *Site User*: per exemple `castanyada`
 3. Un cop creat, entreu al lloc → **Settings** i canvieu:
-   - *Root Directory*: `/home/poudeshorta/htdocs/poudeshorta.online/public`
+   - *Root Directory*: `/home/castanyada/htdocs/castanyadaterrorifica.cat/public`
 
 > **Important**: l'arrel ha d'apuntar a `public/`. Si apunta al directori del
 > projecte, quedarien exposats la configuració i els registres.
@@ -23,9 +23,9 @@ CloudPanel. Compteu-hi uns 30 minuts la primera vegada.
 
 ## 2. Certificat SSL
 
-**Sites → poudeshorta.online → SSL/TLS → Actions → New Let's Encrypt Certificate**
+**Sites → castanyadaterrorifica.cat → SSL/TLS → Actions → New Let's Encrypt Certificate**
 
-Afegiu-hi `poudeshorta.online` i `www.poudeshorta.online`. Stripe exigeix HTTPS per al
+Afegiu-hi `castanyadaterrorifica.cat` i `www.castanyadaterrorifica.cat`. Stripe exigeix HTTPS per al
 webhook, i les entrades i els correus també han d'anar per HTTPS.
 
 ---
@@ -34,8 +34,8 @@ webhook, i les entrades i els correus també han d'anar per HTTPS.
 
 **Databases → Add Database**
 
-- *Database Name*: `poudeshorta`
-- *Database User Name*: `poudeshorta`
+- *Database Name*: `castanyada`
+- *Database User Name*: `castanyada`
 - *Password*: genereu-ne una de llarga i deseu-la
 
 Anoteu les dades: us les demanarà l'instal·lador.
@@ -49,15 +49,15 @@ Anoteu les dades: us les demanarà l'instal·lador.
 Connecteu-vos per SSH amb l'usuari del lloc:
 
 ```bash
-cd /home/poudeshorta/htdocs/poudeshorta.online
+cd /home/castanyada/htdocs/castanyadaterrorifica.cat
 rm -rf ./*                 # el directori ha de quedar buit
-git clone https://github.com/soportic-orb/poudeshorta.git .
+git clone https://github.com/soportic-orb/castaween.git .
 ```
 
 ### Opció B · pujar-ho per SFTP
 
 Descarregueu el ZIP del repositori, descomprimiu-lo i pugeu-ne el contingut
-(no la carpeta que l'embolcalla) a `/home/poudeshorta/htdocs/poudeshorta.online`.
+(no la carpeta que l'embolcalla) a `/home/castanyada/htdocs/castanyadaterrorifica.cat`.
 
 En tots dos casos, la carpeta `vendor/` ja ve inclosa: **no cal executar
 Composer al servidor**.
@@ -67,16 +67,16 @@ Composer al servidor**.
 ## 5. Permisos
 
 ```bash
-cd /home/poudeshorta/htdocs/poudeshorta.online
+cd /home/castanyada/htdocs/castanyadaterrorifica.cat
 chmod -R 775 config storage public/uploads
-chown -R poudeshorta:poudeshorta .
+chown -R castanyada:castanyada .
 ```
 
 ---
 
 ## 6. Instal·lador web
 
-Obriu `https://poudeshorta.online` amb el navegador. Us apareixerà l'instal·lador:
+Obriu `https://castanyadaterrorifica.cat` amb el navegador. Us apareixerà l'instal·lador:
 
 1. Comprova els requisits del servidor (extensions i permisos).
 2. Demana les dades de la base de dades del pas 3.
@@ -99,7 +99,7 @@ Al tauler de Stripe → **Developers → API keys**. Copieu-les al panell, a
 
 **Developers → Webhooks → Add endpoint**
 
-- *Endpoint URL*: `https://poudeshorta.online/webhook/stripe`
+- *Endpoint URL*: `https://castanyadaterrorifica.cat/webhook/stripe`
 - Esdeveniments a escoltar:
   - `checkout.session.completed`
   - `checkout.session.expired`
@@ -138,7 +138,7 @@ Valors habituals:
 | Servidor  | `smtp.elvostreproveidor.cat` |
 | Port      | 587                       |
 | Xifratge  | STARTTLS                  |
-| Usuari    | `info@poudeshorta.online`    |
+| Usuari    | `info@castanyadaterrorifica.cat`    |
 
 Per millorar l'entregabilitat, configureu els registres **SPF**, **DKIM** i
 **DMARC** del domini al vostre proveïdor de DNS.
@@ -147,10 +147,10 @@ Per millorar l'entregabilitat, configureu els registres **SPF**, **DKIM** i
 
 ## 9. Tasques programades
 
-**Sites → poudeshorta.online → Cron Jobs → Add Cron Job**
+**Sites → castanyadaterrorifica.cat → Cron Jobs → Add Cron Job**
 
 ```
-*/5 * * * * /usr/bin/php8.2 /home/poudeshorta/htdocs/poudeshorta.online/bin/cron.php >> /home/poudeshorta/htdocs/poudeshorta.online/storage/logs/cron.log 2>&1
+*/5 * * * * /usr/bin/php8.2 /home/castanyada/htdocs/castanyadaterrorifica.cat/bin/cron.php >> /home/castanyada/htdocs/castanyadaterrorifica.cat/storage/logs/cron.log 2>&1
 ```
 
 S'encarrega d'enviar la cua de comunicats, alliberar les reserves caducades,
@@ -172,7 +172,7 @@ Al Panell de Gestió, seguiu la llista de comprovació del resum:
    més, sense text; el control «Intensitat del vel de color» decideix quant es
    tapa perquè el títol es llegeixi.
 
-   Les tipografies (Caveat Brush per als titulars i Nunito per al text) estan
+   Les tipografies (Creepster per als titulars i Nunito per al text) estan
    allotjades al mateix servidor, a `public/assets/fonts/`: el web no fa cap
    crida a servidors externs per carregar-les i no cal configurar res.
 3. **Tipus d'inscripció**: preus, aforament i què inclou cada inscripció.
@@ -264,8 +264,8 @@ Compteu-hi una hora i **99 €/any** del programa de desenvolupadors d'Apple.
    Profiles** → **Identifiers** → botó **+**.
 2. Trieu **Pass Type IDs** i premeu Continue.
 3. Ompliu:
-   - *Description*: `Entrada Sopar Pou de s'Horta`
-   - *Identifier*: `pass.online.poudeshorta.entrada`
+   - *Description*: `Entrada Castanyada terrorífica`
+   - *Identifier*: `pass.cat.castanyadaterrorifica.entrada`
 
    L'identificador **ha de començar per `pass.`**; la resta és el vostre domini
    a l'inrevés. Anoteu-lo: l'haureu de posar al panell exactament igual.
@@ -279,7 +279,7 @@ directament els fitxers que necessita el servidor:
 ```bash
 openssl genrsa -out pass.key 2048
 openssl req -new -key pass.key -out pass.csr \
-  -subj "/emailAddress=info@poudeshorta.online/CN=Pou de s'Horta/C=ES"
+  -subj "/emailAddress=info@castanyadaterrorifica.cat/CN=AFA Jacint Verdaguer/C=ES"
 ```
 
 Guardeu bé `pass.key`: és la clau privada i no es pot recuperar.
@@ -317,9 +317,9 @@ A **Configuració → Wallet**:
 | Camp | Valor |
 |---|---|
 | Activar els passis | marcat |
-| Pass Type ID | `pass.online.poudeshorta.entrada` |
+| Pass Type ID | `pass.cat.castanyadaterrorifica.entrada` |
 | Team ID | els 10 caràcters de *Membership* a developer.apple.com/account |
-| Nom de l'organització | Comissió de Festes del carrer Pou de s'Horta |
+| Nom de l'organització | AFA Jacint Verdaguer |
 | Certificat del pass | `pass-cert.pem` |
 | Clau privada | `pass.key` |
 | Certificat WWDR | `AppleWWDRCAG4.cer` |
@@ -385,7 +385,7 @@ El compte de servei és qui signarà els passis en nom vostre.
 2. **APIs i serveis → Biblioteca**, cerqueu **Google Wallet API** i premeu
    **Habilita**.
 3. **IAM i administració → Comptes de servei → Crea un compte de servei**.
-   Poseu-hi un nom com `wallet-poudeshorta`. No cal assignar-li cap rol del
+   Poseu-hi un nom com `wallet-castanyada`. No cal assignar-li cap rol del
    projecte.
 4. Obriu el compte de servei acabat de crear → pestanya **Claus** →
    **Afegeix una clau → Crea una clau nova → JSON**. Es descarregarà un fitxer.
@@ -485,7 +485,7 @@ A **Actualitzacions → Origen de les actualitzacions**:
 
 | Camp | Què hi va |
 |---|---|
-| Repositori | `soportic-orb/poudeshorta` |
+| Repositori | `soportic-orb/castaween` |
 | Branca | **el nom exacte de la branca que voleu seguir** |
 | Canal | *Últim canvi de la branca* o *Només versions publicades* |
 | Token d'accés | obligatori si el repositori és privat |
@@ -519,7 +519,7 @@ sembla que el repositori no existeixi.
 
 1. A GitHub: **Settings → Developer settings → Personal access tokens →
    Fine-grained tokens → Generate new token**.
-2. *Repository access*: només `soportic-orb/poudeshorta`.
+2. *Repository access*: només `soportic-orb/castaween`.
 3. *Permissions → Repository permissions → Contents*: **Read-only**.
 4. Copieu el token i enganxeu-lo al camp «Token d'accés» del panell.
 

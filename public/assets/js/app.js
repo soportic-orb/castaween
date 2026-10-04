@@ -52,8 +52,8 @@
             if (totalEl) { totalEl.textContent = euro(total); }
             if (countEl) {
                 countEl.textContent = count === 0
-                    ? 'Encara no has triat cap inscripció'
-                    : (count === 1 ? '1 inscripció seleccionada' : count + ' inscripcions seleccionades');
+                    ? 'Encara no has triat cap entrada'
+                    : (count === 1 ? '1 entrada seleccionada' : count + ' entrades seleccionades');
             }
             if (submitEl) { submitEl.disabled = count === 0; }
         }

@@ -62,7 +62,7 @@ $s = $settings;
             <div class="field">
                 <label for="event_highlights">Atractius de l'esdeveniment</label>
                 <textarea class="textarea" id="event_highlights" name="event_highlights" rows="4"
-                          placeholder="Una línia per atractiu:&#10;Gran paellada popular&#10;Música ambient&#10;Bingo"><?= e($s['event_highlights']) ?></textarea>
+                          placeholder="Una línia per atractiu:&#10;Túnel del terror&#10;Castanyes i panellets&#10;Concurs de disfresses"><?= e($s['event_highlights']) ?></textarea>
                 <span class="field__hint">Es mostren com a targetes destacades a la pàgina d'inici.</span>
             </div>
 

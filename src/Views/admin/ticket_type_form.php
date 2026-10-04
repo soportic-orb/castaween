@@ -33,7 +33,7 @@ $price = old('price', $isNew ? '' : Money::toDecimal((int) $type['price_cents'])
             <div class="field">
                 <label for="includes">Què inclou</label>
                 <textarea class="textarea" id="includes" name="includes" rows="5"
-                          placeholder="Una línia per concepte:&#10;Paella popular i pa&#10;Beguda&#10;Postres i cafè"><?= old('includes', $type['includes']) ?></textarea>
+                          placeholder="Una línia per concepte:&#10;Entrada al túnel del terror&#10;Paperina de castanyes&#10;Concurs de disfresses"><?= old('includes', $type['includes']) ?></textarea>
                 <span class="field__hint">Cada línia es mostra com un punt de la llista, al web i a l'entrada en PDF.</span>
             </div>
 

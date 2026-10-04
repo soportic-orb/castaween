@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Panell de Gestió · Pou de s'Horta
+   Panell de Gestió · Castanyada terrorífica
    ========================================================================== */
 
 .admin-body {
@@ -32,10 +32,9 @@
 }
 .admin-side__brand:hover { color: var(--pdsh-accent); }
 .admin-side__mark {
-    width: 36px; height: 36px; border-radius: 9px; flex: 0 0 auto;
-    background: var(--pdsh-primary); color: var(--pdsh-cream);
-    display: grid; place-items: center; font-weight: 900; font-size: .95rem;
+    width: 38px; height: 38px; flex: 0 0 auto; display: block;
 }
+.admin-side__mark svg { width: 100%; height: 100%; display: block; }
 .admin-side__brand strong { display: block; font-size: .95rem; line-height: 1.2; }
 .admin-side__brand small { font-size: .74rem; opacity: .7; }
 

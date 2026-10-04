@@ -634,7 +634,7 @@ final class TicketService
     private static function generateReference(): string
     {
         for ($i = 0; $i < 12; $i++) {
-            $reference = 'PDSH-' . Str::randomCode(6);
+            $reference = 'CT-' . Str::randomCode(6);
             $exists = Db::value('SELECT 1 FROM `orders` WHERE `reference` = :r', ['r' => $reference]);
             if (!$exists) {
                 return $reference;

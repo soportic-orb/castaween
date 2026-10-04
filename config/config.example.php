@@ -11,8 +11,8 @@ return [
     'db' => [
         'host'    => '127.0.0.1',
         'port'    => 3306,
-        'name'    => 'poudeshorta',
-        'user'    => 'poudeshorta',
+        'name'    => 'castanyada',
+        'user'    => 'castanyada',
         'pass'    => '',
         'charset' => 'utf8mb4',
     ],
@@ -22,7 +22,7 @@ return [
 
     // Adreça pública del lloc, sense barra final.
     // S'utilitza als correus, als codis QR de les entrades i al webhook de Stripe.
-    'base_url' => 'https://poudeshorta.online',
+    'base_url' => 'https://castanyadaterrorifica.cat',
 
     // Poseu-ho a true només mentre depureu: mostra els errors pel navegador.
     'debug'    => false,

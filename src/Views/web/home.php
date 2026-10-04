@@ -38,6 +38,13 @@ $showPoster = $poster !== '' && (Settings::bool('hero_show_poster', true) || $he
 ?>
 
 <section class="hero <?= $heroImage !== '' ? 'hero--image' : '' ?>" <?= $heroStyle ?>>
+    <div class="hero__night" aria-hidden="true">
+        <span class="hero__moon"></span>
+        <?= spooky_icon('bat', 'hero__bat hero__bat--1') ?>
+        <?= spooky_icon('bat', 'hero__bat hero__bat--2') ?>
+        <?= spooky_icon('bat', 'hero__bat hero__bat--3') ?>
+        <span class="hero__fog"></span>
+    </div>
     <div class="wrap hero__grid">
         <div>
             <span class="hero__eyebrow">Inscripcions obertes<?= $salesOpen && $anyOnSale ? '' : ' · properament' ?></span>
@@ -49,7 +56,7 @@ $showPoster = $poster !== '' && (Settings::bool('hero_show_poster', true) || $he
                 <?php if ($daysLeft !== null): ?>
                     <span class="hero__countdown">
                         <?php if ($daysLeft === 0): ?>
-                            🎉 <strong>És avui!</strong>
+                            🎃 <strong>És avui!</strong>
                         <?php elseif ($daysLeft === 1): ?>
                             ⏳ <strong>Demà!</strong>
                         <?php else: ?>
@@ -64,7 +71,7 @@ $showPoster = $poster !== '' && (Settings::bool('hero_show_poster', true) || $he
             </div>
 
             <?php if ($salesOpen && $anyOnSale): ?>
-                <a class="btn btn--accent btn--lg" href="#inscripcions">Vull inscriure'm →</a>
+                <a class="btn btn--accent btn--lg" href="#inscripcions">Vull la meva entrada →</a>
             <?php endif; ?>
         </div>
 
@@ -75,7 +82,7 @@ $showPoster = $poster !== '' && (Settings::bool('hero_show_poster', true) || $he
                 <div class="hero__highlights">
                     <?php foreach ($highlights as $index => $highlight): ?>
                         <div class="hero__highlight">
-                            <i aria-hidden="true"><?= ['🥘', '🎵', '🎱', '🎉', '⭐'][$index % 5] ?></i>
+                            <i><?= highlight_icon($index) ?></i>
                             <span><?= e($highlight) ?></span>
                         </div>
                     <?php endforeach; ?>
@@ -91,8 +98,8 @@ $showPoster = $poster !== '' && (Settings::bool('hero_show_poster', true) || $he
             <div class="ticket-grid">
                 <?php foreach ($highlights as $index => $highlight): ?>
                     <div class="card">
-                        <div class="card__body" style="display:flex;align-items:center;gap:14px;">
-                            <span style="font-size:1.9rem;line-height:1;" aria-hidden="true"><?= ['🥘', '🎵', '🎱', '🎉', '⭐'][$index % 5] ?></span>
+                        <div class="card__body highlight-card">
+                            <?= highlight_icon($index) ?>
                             <strong><?= e($highlight) ?></strong>
                         </div>
                     </div>
@@ -105,7 +112,7 @@ $showPoster = $poster !== '' && (Settings::bool('hero_show_poster', true) || $he
 <section class="section" id="inscripcions">
     <div class="wrap">
         <div class="section__head">
-            <h2>Tria la teva inscripció</h2>
+            <h2>Tria la teva entrada</h2>
             <p>Selecciona el nombre de places de cada tipus. El pagament es fa amb targeta de crèdit
                a través de Stripe, de manera totalment segura.</p>
         </div>
@@ -181,7 +188,7 @@ $showPoster = $poster !== '' && (Settings::bool('hero_show_poster', true) || $he
                     <div class="cart-bar">
                         <div class="cart-bar__total">
                             <strong data-cart-total>0,00 €</strong>
-                            <span class="cart-bar__count" data-cart-count>Encara no has triat cap inscripció</span>
+                            <span class="cart-bar__count" data-cart-count>Encara no has triat cap entrada</span>
                         </div>
                         <button type="submit" class="btn btn--accent btn--lg" data-cart-submit disabled
                                 data-loading="Preparant…">

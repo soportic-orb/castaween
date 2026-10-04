@@ -10,14 +10,14 @@ use App\Core\View;
     .bare {
         min-height: 100vh; display: grid; place-items: center; padding: 32px 18px;
         background:
-            radial-gradient(110% 120% at 12% 0%, rgba(242,168,29,.25) 0%, rgba(242,168,29,0) 55%),
-            linear-gradient(165deg, var(--pdsh-primary) 0%, #5E0A18 100%);
+            radial-gradient(circle at 86% 12%, color-mix(in srgb, var(--pdsh-accent) 30%, transparent) 0, transparent 22%),
+            linear-gradient(180deg, var(--pdsh-primary) 0%, var(--pdsh-ink) 100%);
     }
     .bare__card {
         width: 100%; max-width: 560px; background: #fff;
         border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,.28); overflow: hidden;
     }
-    .bare__head { background: var(--pdsh-cream); padding: 26px 30px; border-bottom: 4px solid var(--pdsh-accent); }
+    .bare__head { background: var(--pdsh-cream); padding: 26px 30px; border-bottom: 4px solid var(--pdsh-secondary); }
     .bare__head h1 { margin: 0; font-size: 1.5rem; color: var(--pdsh-primary); }
     .bare__head p { margin: 6px 0 0; color: var(--pdsh-muted); font-size: .92rem; }
     .bare__body { padding: 28px 30px 32px; }

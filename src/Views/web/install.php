@@ -2,7 +2,7 @@
 use App\Core\Csrf;
 
 $heading = 'Instal·lació de la plataforma';
-$subheading = 'Inscripcions · Pou de s\'Horta';
+$subheading = 'Inscripcions · Castanyada terrorífica';
 $errors = $errors ?? [];
 ?>
 

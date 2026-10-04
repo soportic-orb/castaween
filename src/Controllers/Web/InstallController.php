@@ -147,7 +147,10 @@ final class InstallController
         ], 'layouts/bare');
     }
 
-    /** Crea dos tipus d'inscripció d'exemple per no començar amb la pantalla buida. */
+    /**
+     * Crea els dos tipus d'entrada de l'esdeveniment. Es creen desactivats i sense
+     * preu: cal posar-hi el preu des del Panell de Gestió i activar-los.
+     */
     private function seedTicketTypes(): void
     {
         if ((int) Db::value('SELECT COUNT(*) FROM `ticket_types`', [], 0) > 0) {
@@ -155,18 +158,20 @@ final class InstallController
         }
 
         Db::insert('ticket_types', [
-            'name'        => 'Sopar adult',
-            'description' => 'Inscripció per a persones adultes.',
-            'includes'    => "Paella popular i pa\nBeguda (aigua, vi o refresc)\nPostres i cafè\nParticipació al bingo",
-            'price_cents' => 1500,
+            'name'        => 'Entrada adult',
+            'description' => 'Recorregut complet pel túnel del terror. Recomanat a partir de 12 anys.',
+            'includes'    => "Entrada al túnel del terror\nPaperina de castanyes torrades\nConcurs de disfresses",
+            'price_cents' => 0,
+            'active'      => 0,
             'sort_order'  => 1,
         ]);
 
         Db::insert('ticket_types', [
-            'name'        => 'Sopar infantil (fins a 12 anys)',
-            'description' => 'Inscripció per a infants de fins a 12 anys.',
-            'includes'    => "Ració infantil de paella\nBeguda\nPostres",
-            'price_cents' => 800,
+            'name'        => 'Entrada infantil (fins a 11 anys)',
+            'description' => 'Túnel en versió suau, amb llum i sense ensurts forts.',
+            'includes'    => "Entrada al túnel infantil\nPaperina de castanyes\nConcurs de disfresses",
+            'price_cents' => 0,
+            'active'      => 0,
             'sort_order'  => 2,
         ]);
     }

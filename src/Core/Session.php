@@ -21,7 +21,7 @@ final class Session
             'httponly' => true,
             'samesite' => 'Lax',
         ]);
-        session_name('pdsh_session');
+        session_name('ct_session');
         session_start();
     }
 

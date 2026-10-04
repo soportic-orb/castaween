@@ -60,16 +60,21 @@ final class TicketPdf
         $pdf->AddPage();
         $contentW = self::PAGE_W - self::MARGIN * 2;
 
-        // ---------- Capçalera de color ----------
-        $pdf->fillHex($primary);
+        // ---------- Capçalera de nit ----------
+        // Franja fosca amb una lluna d'espelma a la dreta i una vora carabassa.
+        $pdf->fillHex($ink);
         $pdf->Rect(0, 0, self::PAGE_W, 40, 'F');
+        $pdf->fillHex($primary);
+        $pdf->Rect(0, 26, self::PAGE_W, 14, 'F');
         $pdf->fillHex($accent);
+        $pdf->roundedRect(self::PAGE_W - self::MARGIN - 17, 5, 15, 15, 7.5, 'F');
+        $pdf->fillHex($secondary);
         $pdf->Rect(0, 40, self::PAGE_W, 2.5, 'F');
 
         // El logotip de la web, a l'esquerra del tot. Si no n'hi ha, el text
         // comença al marge com sempre.
         $textX = self::MARGIN;
-        $logo = $this->logoFile($primary);
+        $logo = $this->logoFile($ink);
         if ($logo !== null) {
             [$logoPath, $logoW, $logoH] = $logo;
             $pdf->Image($logoPath, self::MARGIN, (40 - $logoH) / 2, $logoW, $logoH, 'PNG');
@@ -78,19 +83,20 @@ final class TicketPdf
 
         $textW = (self::PAGE_W - self::MARGIN - 40) - $textX;
 
-        $pdf->textHex($cream);
+        $pdf->textHex($secondary);
         $pdf->SetFont('Helvetica', 'B', 19);
         $pdf->SetXY($textX, 10);
         $pdf->fitCell($textW, 9, (string) Settings::get('event_name'), 19, 12);
 
+        $pdf->textHex($cream);
         $pdf->SetFont('Helvetica', '', 11);
-        $pdf->SetXY($textX, 21);
+        $pdf->SetXY($textX, 20);
         $pdf->fitCell($textW, 6, (string) Settings::get('event_tagline'), 11, 8);
 
         $pdf->SetFont('Helvetica', 'B', 8);
         $pdf->textHex($accent);
         $pdf->SetXY($textX, 29.5);
-        $pdf->Cell($textW, 5, $pdf->t('ENTRADA · INSCRIPCIÓ'), 0, 0, 'L');
+        $pdf->Cell($textW, 5, $pdf->t('ENTRADA'), 0, 0, 'L');
 
         // Numeració de l'entrada dins la comanda.
         if ($total > 1) {
@@ -116,7 +122,7 @@ final class TicketPdf
         $pdf->textHex($secondary);
         $pdf->SetFont('Helvetica', 'B', 9);
         $pdf->SetXY($leftX, $y);
-        $pdf->Cell($leftW, 5, $pdf->t('TIPUS D\'INSCRIPCIÓ'), 0, 0, 'L');
+        $pdf->Cell($leftW, 5, $pdf->t('TIPUS D\'ENTRADA'), 0, 0, 'L');
         $y += 6;
 
         $pdf->textHex($ink);
@@ -207,7 +213,7 @@ final class TicketPdf
             $pdf->textHex($primary);
             $pdf->SetFont('Helvetica', 'B', 9.5);
             $pdf->SetXY(self::MARGIN + 8, $boxY + 5);
-            $pdf->Cell($contentW - 16, 5, $pdf->t('QUÈ INCLOU LA TEVA INSCRIPCIÓ'), 0, 0, 'L');
+            $pdf->Cell($contentW - 16, 5, $pdf->t('QUÈ INCLOU LA TEVA ENTRADA'), 0, 0, 'L');
 
             $pdf->SetFont('Helvetica', '', 10.5);
             $lineY = $boxY + 11.5;

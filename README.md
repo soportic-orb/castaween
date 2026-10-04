@@ -1,11 +1,36 @@
-# Inscripcions · Sopar de germanor del carrer Pou de s'Horta
+# Inscripcions · Castanyada terrorífica a La Granada
 
-Plataforma web d'inscripcions i venda d'entrades per a esdeveniments populars,
-feta en **PHP 8.1+ i MySQL** i pensada per allotjar-se en un VPS compartit amb
-**CloudPanel** al domini `poudeshorta.online`.
+Plataforma web d'inscripcions i venda d'entrades per a la **Castanyada
+terrorífica a La Granada** (túnel del terror, Halloween i castanyada), el
+31 d'octubre de 2026. Organitza l'**AFA Jacint Verdaguer**.
 
-Els colors de la interfície, del PDF de l'entrada i dels correus estan extrets
-del cartell de l'esdeveniment i es poden canviar des del Panell de Gestió.
+Feta en **PHP 8.1+ i MySQL** i pensada per allotjar-se en un VPS compartit amb
+**CloudPanel** al domini `castanyadaterrorifica.cat`. És el mateix sistema que
+la plataforma del sopar de Pou de s'Horta
+([soportic-orb/poudeshorta](https://github.com/soportic-orb/poudeshorta)), amb
+totes les seves funcionalitats i una imatge nova de nit de Halloween.
+
+## Imatge
+
+- **Paleta «Nit de carabasses»**: violeta de nit `#2B1640`, carabassa `#FF6B1A`,
+  espelma `#FFB81C`, os `#F6ECDD`, castanya `#6E4A2E` i tinta `#17111C`. Es pot
+  canviar des de *Configuració → Aparença*.
+- **Tipografia**: Creepster per als títols i Nunito per al text, totes dues
+  allotjades al servidor.
+- Portada amb lluna, boira i ratpenats; teranyines sota la capçalera; icones
+  pròpies (túnel, castanya, fantasma, espelma, carabassa); castanyes i fulles
+  que cauen a la pantalla de compra correcta. Les animacions s'aturen si la
+  persona té activada l'opció de moviment reduït.
+
+## Primera posada en marxa
+
+L'instal·lador crea dos tipus d'entrada, **Entrada adult** i **Entrada infantil
+(fins a 11 anys)**, **desactivats i sense preu**. Abans d'obrir les
+inscripcions:
+
+1. *Tipus d'inscripció*: poseu el preu a cada entrada i activeu-les.
+2. *Configuració → Esdeveniment*: horari, lloc exacte, contacte, cartell i logotip.
+3. Completeu Stripe, el correu SMTP i la resta de la llista de comprovació del resum.
 
 ---
 
@@ -68,7 +93,7 @@ Composer al servidor**.
 
 1. Pugeu el projecte al servidor i apunteu l'arrel del lloc a la carpeta `public/`.
 2. Doneu permisos d'escriptura a `config/`, `storage/` i `public/uploads/`.
-3. Obriu `https://poudeshorta.online` amb el navegador: apareixerà l'instal·lador.
+3. Obriu `https://castanyadaterrorifica.cat` amb el navegador: apareixerà l'instal·lador.
 4. Introduïu les dades de la base de dades i creeu l'usuari administrador.
 5. Entreu al Panell de Gestió i completeu la llista de comprovació del resum.
 

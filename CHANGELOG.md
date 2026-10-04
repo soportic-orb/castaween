@@ -9,9 +9,38 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.14.0] — 2026-09-23
+## [1.0.0] — 2026-10-04
 
-### Afegit
+Primera versió de la plataforma de la **Castanyada terrorífica a La Granada**,
+a partir de la versió 1.14.0 de la plataforma de Pou de s'Horta
+([soportic-orb/poudeshorta](https://github.com/soportic-orb/poudeshorta)). Té
+totes les funcionalitats de l'original; l'historial anterior és a sota.
+
+### Canviat
+
+- Imatge nova de nit de Halloween: paleta «Nit de carabasses», lletra Creepster
+  per als títols, portada amb lluna, boira i ratpenats, i teranyines en lloc de
+  les banderetes.
+- Icones dibuixades (túnel, castanya, fantasma, espelma, carabassa) en lloc dels
+  emojis; carabassa com a logotip, icona de la pestanya i marca del panell.
+- La celebració de la compra correcta fa caure castanyes, fulles de tardor i
+  algun ratpenat en lloc de confeti.
+- Entrada en PDF i correus amb la capçalera de nit i la vora carabassa. Els
+  botons de carabassa porten el text en color de tinta, per contrast.
+- Textos i valors per defecte de l'esdeveniment: 31 d'octubre de 2026 a
+  La Granada, organitza l'AFA Jacint Verdaguer.
+- L'instal·lador crea les entrades «Entrada adult» i «Entrada infantil (fins a
+  11 anys)» desactivades i sense preu, perquè el preu es posi des del panell.
+- Les referències de les inscripcions comencen per `CT-`.
+- Les actualitzacions OTA apunten a `soportic-orb/castaween`.
+
+---
+
+## Historial de la plataforma de Pou de s'Horta
+
+### [1.14.0] — 2026-09-23
+
+#### Afegit
 
 - **Inscriure assistents a mà des del Panell de Gestió**, per a qui s'apunta en
   paper, per telèfon o pagant en efectiu. A *Inscripcions → + Inscriure algú a
@@ -36,9 +65,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.13.1] — 2026-09-05
+### [1.13.1] — 2026-09-05
 
-### Corregit
+#### Corregit
 
 - **Els correus que fallaven ho feien en silenci.** `Mailer::send()` retorna
   `false` quan no pot enviar, però qui el cridava no en feia cas: a la pantalla
@@ -53,9 +82,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.13.0] — 2026-09-05
+### [1.13.0] — 2026-09-05
 
-### Canviat
+#### Canviat
 
 - **Tots els textos de la plataforma passen a tractar l'usuari de tu.** Afecta
   la web pública, el panell de gestió, els correus, el PDF de l'entrada,
@@ -68,9 +97,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.12.1] — 2026-09-04
+### [1.12.1] — 2026-09-04
 
-### Corregit
+#### Corregit
 
 - **A l'apartat d'anul·lar no sortia el llistat d'entrades quan només en
   quedava una de vàlida.** La llista només apareixia amb dues o més, de manera
@@ -84,9 +113,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.12.0] — 2026-09-04
+### [1.12.0] — 2026-09-04
 
-### Afegit
+#### Afegit
 
 - **Els passis de wallet caduquen sols passat l'esdeveniment.** Per defecte, al
   cap de **48 hores** de la data de l'esdeveniment; el termini es pot canviar a
@@ -106,9 +135,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.11.2] — 2026-09-04
+### [1.11.2] — 2026-09-04
 
-### Canviat
+#### Canviat
 
 - A «Les meves entrades», el botó **«Descarregar el PDF»** passa a ser
   **«Descarregar les entrades»** i porta a la pàgina de la inscripció, que és
@@ -119,7 +148,7 @@ Actualitzacions i a la barra lateral.
   unificat en un. Quan la inscripció no té cap entrada vàlida, el botó
   continua dient «Gestionar aquesta inscripció».
 
-### Corregit
+#### Corregit
 
 - A «Les meves entrades», les entrades **ja validades a la porta** sortien amb
   la banda vermella d'anul·lades. Ara segueixen el mateix criteri que a la
@@ -128,9 +157,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.11.1] — 2026-09-04
+### [1.11.1] — 2026-09-04
 
-### Canviat
+#### Canviat
 
 - **Les banderoles de dalt van ara damunt de la fotografia de la capçalera.**
   Abans anaven en una tira pròpia amb fons de color, i la fotografia començava
@@ -141,9 +170,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.11.0] — 2026-09-04
+### [1.11.0] — 2026-09-04
 
-### Corregit
+#### Corregit
 
 - **No es podien anul·lar la resta d'entrades un cop se n'havia anul·lat una.**
   En anul·lar-ne una amb devolució, la inscripció passa a l'estat «retornada
@@ -152,7 +181,7 @@ Actualitzacions i a la barra lateral.
   entrades que encara eren bones. Ara es poden anul·lar mentre quedi termini,
   n'hi hagi hagut cap d'anul·lada abans o no.
 
-### Canviat
+#### Canviat
 
 - Al detall de la inscripció, la banda de l'esquerra de cada entrada és
   **verda quan l'entrada és bona** i **vermella quan està anul·lada**.
@@ -166,9 +195,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.10.0] — 2026-09-04
+### [1.10.0] — 2026-09-04
 
-### Afegit
+#### Afegit
 
 - **Selecció múltiple i esborrat al llistat d'inscripcions.** Cada entrada té
   una casella, hi ha una casella per marcar-les totes de cop i, quan n'hi ha
@@ -188,7 +217,7 @@ Actualitzacions i a la barra lateral.
   - Queda registrat a l'auditoria amb els codis de les entrades esborrades.
   - En tornar al llistat es mantenen els filtres que hi havia posats.
 
-### Corregit
+#### Corregit
 
 - **La cerca del llistat d'inscripcions donava error 500.** La consulta
   repetia el mateix marcador per a les set columnes on cerca, i les consultes
@@ -197,9 +226,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.9.0] — 2026-09-04
+### [1.9.0] — 2026-09-04
 
-### Canviat
+#### Canviat
 
 - **Els botons dels wallets ara hi afegeixen totes les entrades de la comanda.**
   Fins ara només s'hi afegia la primera: qui comprava quatre entrades només en
@@ -217,7 +246,7 @@ Actualitzacions i a la barra lateral.
 - A «Les meves entrades», cada entrada té al costat la icona dels wallets per
   afegir-hi **només aquella entrada**.
 
-### Corregit
+#### Corregit
 
 - **El passi d'Apple no mostrava el logotip configurat a la web.** Ara la
   capçalera del passi porta el logotip de Configuració → Aparença, reescalat a
@@ -228,9 +257,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.8.0] — 2026-09-04
+### [1.8.0] — 2026-09-04
 
-### Afegit
+#### Afegit
 
 - **Escàner de codis QR amb la càmera al control d'accés.** Des del mòbil (o
   qualsevol dispositiu amb càmera) ja no cal escriure el codi a mà: hi ha un
@@ -251,7 +280,7 @@ Actualitzacions i a la barra lateral.
   - Si el navegador no pot obrir la càmera (per exemple sense HTTPS), el botó
     no surt i s'explica que cal escriure el codi a mà.
 
-### Corregit
+#### Corregit
 
 - **L'atribut `hidden` no amagava els botons ni els avisos.** Com que `.btn` i
   `.alert` defineixen `display`, guanyaven a la regla del navegador i els
@@ -261,9 +290,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.7.2] — 2026-09-04
+### [1.7.2] — 2026-09-04
 
-### Corregit
+#### Corregit
 
 - **La creació de la classe del Google Wallet fallava** amb «Default value for
   LocalizedString cannot be empty» quan no s'havia omplert el lloc de
@@ -275,9 +304,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.7.1] — 2026-09-04
+### [1.7.1] — 2026-09-04
 
-### Canviat
+#### Canviat
 
 - Si la classe del Google Wallet ja existeix però el compte de servei no la pot
   actualitzar, es dona per registrada igualment i s'avisa del motiu: per
@@ -288,9 +317,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.7.0] — 2026-09-04
+### [1.7.0] — 2026-09-04
 
-### Corregit
+#### Corregit
 
 - **Els passis del Google Wallet no s'haurien desat.** L'enllaç portava les
   dades de l'esdeveniment a dins i sortien 2123 caràcters, quan Google trunca
@@ -298,7 +327,7 @@ Actualitzacions i a la barra lateral.
 - El missatge d'estat de l'Apple Wallet deia «Configurat» encara que els
   fitxers dels certificats haguessin desaparegut del disc.
 
-### Afegit
+#### Afegit
 
 - Botó **Crear la classe al Google Wallet**: crea al compte de Google les
   dades comunes a totes les entrades, de manera que l'enllaç de cada entrada
@@ -309,16 +338,16 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.6.0] — 2026-09-04
+### [1.6.0] — 2026-09-04
 
-### Afegit
+#### Afegit
 
 - Missatge propi a la pantalla de pagament, al quadre «Resum», sota l'import
   total i just abans de les condicions. S'escriu i s'activa des de
   Configuració → Pagaments. Admet diverses línies i converteix les adreces
   web en enllaços; l'HTML que s'hi escrigui s'escapa i no s'executa.
 
-### Canviat
+#### Canviat
 
 - La conversió de text pla a HTML passa a `Str::toHtmlParagraphs()`, que ara
   comparteixen el missatge del pagament i els correus. Comprovat que els
@@ -326,9 +355,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.5.0] — 2026-09-04
+### [1.5.0] — 2026-09-04
 
-### Afegit
+#### Afegit
 
 - Sota el total de la pantalla de pagament s'indica, a títol informatiu, quina
   part de l'import correspon a les despeses de la passarel·la, deixant clar
@@ -341,9 +370,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.4.1] — 2026-09-04
+### [1.4.1] — 2026-09-04
 
-### Corregit
+#### Corregit
 
 - **El pagament amb targeta no arrencava.** La sessió de Stripe demanava la
   passarel·la en català i Stripe no ofereix aquest idioma, de manera que
@@ -358,7 +387,7 @@ Actualitzacions i a la barra lateral.
   detecten abans d'anar a la passarel·la i s'explica el motiu, en comptes de
   rebre un error de Stripe.
 
-### Canviat
+#### Canviat
 
 - El nom dels tipus d'inscripció es veu molt més gran a la portada. Hi havia
   dues regles d'estil per al mateix element i manava la petita.
@@ -367,9 +396,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.4.0] — 2026-09-04
+### [1.4.0] — 2026-09-04
 
-### Canviat
+#### Canviat
 
 - **Tipografia del cartell a tot el web públic**: Caveat Brush, de pinzell, per
   als titulars, i Nunito per al text. Totes dues estan allotjades al mateix
@@ -380,12 +409,12 @@ Actualitzacions i a la barra lateral.
 - La pàgina de dades de la inscripció fa servir la mateixa capçalera de color
   que la resta de pàgines interiors.
 
-### Afegit
+#### Afegit
 
 - **Banderoles** sota la barra de navegació, com les de la part alta del
   cartell, dibuixades amb els colors configurats al panell.
 
-### Notes
+#### Notes
 
 - Els correus i les entrades en PDF continuen amb les tipografies de sempre:
   els gestors de correu no carreguen lletres externes de manera fiable i el PDF
@@ -393,9 +422,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.3.0] — 2026-09-04
+### [1.3.0] — 2026-09-04
 
-### Canviat
+#### Canviat
 
 - **Pàgina de l'entrada (la del codi QR)**: l'estat ara es veu abans de llegir
   res, amb una franja de color a tota l'amplada — verd si és vàlida, ambre si
@@ -409,15 +438,15 @@ Actualitzacions i a la barra lateral.
 - Els títols de secció porten un traç d'accent a sota, com el subratllat del
   cartell.
 
-### Afegit
+#### Afegit
 
 - Compte enrere a la portada quan s'ha indicat la data exacta de
   l'esdeveniment: «Falten 22 dies», «Demà!» o «És avui!».
 ---
 
-## [1.2.0] — 2026-09-04
+### [1.2.0] — 2026-09-04
 
-### Afegit
+#### Afegit
 
 - **Imatge de fons a la capçalera del web públic**, configurable des de
   Aparença: pujada de la fotografia, intensitat del vel de color (0–90),
@@ -425,7 +454,7 @@ Actualitzacions i a la barra lateral.
   mostrant el cartell al costat del títol o substituir-lo pels atractius de
   l'esdeveniment. Sense imatge es manté el degradat de la marca.
 
-### Canviat
+#### Canviat
 
 - La capçalera del web públic ja no es parteix en dues línies als mòbils: els
   enllaços ocupen una sola fila i, en pantalles estretes, «Informació» s'amaga
@@ -433,9 +462,9 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.1.0] — 2026-09-04
+### [1.1.0] — 2026-09-04
 
-### Afegit
+#### Afegit
 
 - Botó **Diagnosticar la connexió** a Actualitzacions, que comprova un per un
   el repositori, el token, l'extensió `zip`, el mètode d'actualització, els
@@ -447,7 +476,7 @@ Actualitzacions i a la barra lateral.
   que exporta el Keychain del Mac amb algorismes antics.
 - Guia pas a pas d'Apple Wallet i de Google Wallet a `DEPLOY.md`.
 
-### Corregit
+#### Corregit
 
 - **Apple Wallet**: la signatura del passi s'extreia malament del missatge
   S/MIME que retorna OpenSSL, de manera que al `.pkpass` hi anaven 20 bytes en
@@ -466,11 +495,11 @@ Actualitzacions i a la barra lateral.
 
 ---
 
-## [1.0.0] — 2026-09-04
+### [1.0.0] — 2026-09-04
 
 Primera versió de la plataforma.
 
-### Afegit
+#### Afegit
 
 - Web públic amb la informació de l'esdeveniment i els tipus d'inscripció.
 - Pagament amb targeta a través de Stripe Checkout, amb webhook signat.

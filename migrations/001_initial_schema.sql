@@ -1,4 +1,4 @@
--- Esquema inicial de la plataforma d'inscripcions Pou de s'Horta
+-- Esquema inicial de la plataforma d'inscripcions Castanyada terrorífica
 
 CREATE TABLE IF NOT EXISTS `settings` (
   `k` VARCHAR(120) NOT NULL,

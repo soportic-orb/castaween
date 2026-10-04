@@ -19,8 +19,25 @@ $pageTitle = ($title ?? '') !== ''
 <?php if (($poster = (string) Settings::get('event_poster')) !== ''): ?>
     <meta property="og:image" content="<?= e(Url::base() . $poster) ?>">
 <?php endif; ?>
-<link rel="icon" href="data:image/svg+xml,<?= rawurlencode('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="' . Settings::get('brand_primary') . '"/><text x="16" y="22" font-family="sans-serif" font-size="16" font-weight="bold" fill="' . Settings::get('brand_accent') . '" text-anchor="middle">P</text></svg>') ?>">
-<link rel="preload" as="font" type="font/woff2" href="<?= e(url('/assets/fonts/caveat-brush-latin.woff2')) ?>" crossorigin>
+<?php
+// Icona de la pestanya: una carabassa amb els colors configurats.
+$favicon = sprintf(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
+    . '<rect width="64" height="64" rx="14" fill="%1$s"/>'
+    . '<path d="M32 16c-2-5 1-9 5-10-2 3-3 6-2 10z" fill="%4$s"/>'
+    . '<ellipse cx="22" cy="38" rx="12" ry="17" fill="%2$s"/><ellipse cx="42" cy="38" rx="12" ry="17" fill="%2$s"/>'
+    . '<ellipse cx="32" cy="38" rx="11" ry="18" fill="%2$s"/>'
+    . '<path d="M22 34l5-5 3 5zM34 34l5-5 3 5z" fill="%3$s"/>'
+    . '<path d="M21 43c4 5 18 5 22 0l-3 2-3-3-3 3-2-3-3 3-3-3-3 3z" fill="%3$s"/>'
+    . '</svg>',
+    Settings::get('brand_primary'),
+    Settings::get('brand_secondary'),
+    Settings::get('brand_ink'),
+    Settings::get('brand_olive')
+);
+?>
+<link rel="icon" href="data:image/svg+xml,<?= rawurlencode($favicon) ?>">
+<link rel="preload" as="font" type="font/woff2" href="<?= e(url('/assets/fonts/creepster-latin.woff2')) ?>" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="<?= e(url('/assets/fonts/nunito-400-latin.woff2')) ?>" crossorigin>
 <link rel="stylesheet" href="<?= e(asset('css/fonts.css')) ?>">
 <link rel="stylesheet" href="<?= e(asset('css/app.css')) ?>">
@@ -33,15 +50,19 @@ $pageTitle = ($title ?? '') !== ''
         --pdsh-olive: <?= e(Settings::get('brand_olive')) ?>;
         --pdsh-ink: <?= e(Settings::get('brand_ink')) ?>;
 <?php
-// Banderoles dibuixades amb els colors configurats, com les del cartell.
+// Tira de teranyines sota la capçalera, dibuixada amb els colors configurats.
 $bunting = sprintf(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="72" height="20" viewBox="0 0 72 20">'
-    . '<path d="M0 0h72v2H0z" fill="%1$s" opacity=".45"/>'
-    . '<path d="M6 1h22l-11 17z" fill="%2$s"/>'
-    . '<path d="M42 1h22l-11 17z" fill="%3$s"/>'
+    '<svg xmlns="http://www.w3.org/2000/svg" width="96" height="26" viewBox="0 0 96 26">'
+    . '<path d="M0 0h96v3H0z" fill="%1$s"/>'
+    . '<g fill="none" stroke="%2$s" stroke-opacity=".55" stroke-width="1.2">'
+    . '<path d="M48 0v22M48 0L30 16M48 0L66 16M48 0L38 21M48 0L58 21"/>'
+    . '<path d="M41 6q7 4 14 0M36 11q12 6 24 0M32 16q16 8 32 0"/>'
+    . '</g>'
+    . '<path d="M16 0v13" stroke="%2$s" stroke-opacity=".5" stroke-width="1"/>'
+    . '<ellipse cx="16" cy="16" rx="3.2" ry="3.8" fill="%1$s"/>'
+    . '<path d="M12 13l-4-3M12 16H7M12 19l-4 3M20 13l4-3M20 16h5M20 19l4 3" stroke="%1$s" stroke-width="1.2"/>'
     . '</svg>',
     Settings::get('brand_ink'),
-    Settings::get('brand_accent'),
     Settings::get('brand_cream')
 );
 ?>

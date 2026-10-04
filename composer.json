@@ -1,6 +1,6 @@
 {
-    "name": "poudeshorta/inscripcions",
-    "description": "Plataforma d'inscripcions - Sopar de germanor del carrer Pou de s'Horta",
+    "name": "castaween/inscripcions",
+    "description": "Plataforma d'inscripcions - Castanyada terrorífica a La Granada",
     "type": "project",
     "license": "MIT",
     "require": {

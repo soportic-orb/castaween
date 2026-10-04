@@ -489,7 +489,7 @@ final class GoogleWallet
 
         try {
             $url = (new self())->saveUrl(
-                ['reference' => 'PDSH-PROVA', 'name' => 'Entrada', 'surname' => 'de prova'],
+                ['reference' => 'CT-PROVA', 'name' => 'Entrada', 'surname' => 'de prova'],
                 ['code' => 'PROVA123', 'attendee_name' => 'Entrada de prova', 'status' => 'valid'],
                 ['name' => 'Prova de configuració', 'includes' => '']
             );

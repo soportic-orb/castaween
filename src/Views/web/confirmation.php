@@ -13,8 +13,9 @@ $valid = array_values(array_filter($tickets, static fn ($t) => in_array($t['stat
 
 <section class="wrap wrap--narrow">
     <div class="success-hero">
-        <span class="success-hero__icon" role="img" aria-label="Celebració">🎉</span>
-        <h1>Compra realitzada correctament!</h1>
+        <span class="success-hero__icon"><?= spooky_icon('ghost') ?></span>
+        <h1>Ja ets dins!</h1>
+        <p class="success-hero__sub">Compra realitzada correctament. Ens veiem al túnel… si t'atreveixes.</p>
         <p>
             Ja tens la teva plaça per al <strong><?= e(Settings::get('event_name')) ?></strong>.
             <?php if (!empty($order['confirmation_sent_at'])): ?>

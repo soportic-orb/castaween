@@ -1,7 +1,7 @@
 <?php $heading = 'Instal·lació completada'; ?>
 
 <div style="text-align:center;padding:10px 0 6px;">
-    <span style="font-size:3.4rem;display:block;" aria-hidden="true">🎉</span>
+    <span style="display:block;width:76px;margin:0 auto;"><?= spooky_icon('pumpkin') ?></span>
     <h2 style="margin:12px 0 6px;">Tot a punt!</h2>
     <p style="color:var(--pdsh-muted);">
         La plataforma d'inscripcions ja està instal·lada. Entra al Panell de Gestió

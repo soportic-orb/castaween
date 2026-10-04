@@ -645,7 +645,7 @@ final class Updater
     {
         $headers = [
             'Accept: application/vnd.github+json',
-            'User-Agent: poudeshorta-updater',
+            'User-Agent: castaween-updater',
             'X-GitHub-Api-Version: 2022-11-28',
         ];
         $token = trim((string) Settings::get('ota_token'));

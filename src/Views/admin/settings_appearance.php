@@ -6,9 +6,9 @@ $s = $settings;
 $colors = [
     'brand_primary'   => ['Color principal', 'Capçaleres, títols i franja de l\'entrada.'],
     'brand_secondary' => ['Color d\'acció', 'Botons principals i elements destacats.'],
-    'brand_accent'    => ['Color d\'accent', 'Etiquetes, línies i detalls daurats.'],
+    'brand_accent'    => ['Color d\'accent', 'Lluna, espelmes i detalls daurats.'],
     'brand_cream'     => ['Fons clar', 'Fons general de les pàgines.'],
-    'brand_olive'     => ['Verd complementari', 'Estats correctes i detalls.'],
+    'brand_olive'     => ['Color castanya', 'Castanyes, tija de la carabassa i detalls.'],
     'brand_ink'       => ['Color del text', 'Text principal i barra lateral.'],
 ];
 ?>
