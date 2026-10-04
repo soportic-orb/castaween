@@ -109,6 +109,35 @@ $showPoster = $poster !== '' && (Settings::bool('hero_show_poster', true) || $he
     </section>
 <?php endif; ?>
 
+<?php if (($homePages = \App\Services\Pages::home()) !== []): ?>
+    <section class="section section--tight" id="mes-informacio">
+        <div class="wrap">
+            <div class="section__head">
+                <h2>Abans de venir…</h2>
+                <p>Tot el que cal saber per passar-ho de por.</p>
+            </div>
+            <div class="page-cards">
+                <?php foreach ($homePages as $index => $homePage):
+                    $image = trim((string) $homePage['cover_image']);
+                ?>
+                    <a class="page-card" href="<?= e(\App\Services\Pages::url($homePage)) ?>">
+                        <span class="page-card__image" <?= $image !== '' ? 'style="background-image:url(\'' . e(url($image)) . '\')"' : '' ?>>
+                            <?= $image === '' ? spooky_icon(['ghost', 'tunnel', 'pumpkin', 'candle'][$index % 4]) : '' ?>
+                        </span>
+                        <span class="page-card__body">
+                            <h3><?= e($homePage['title']) ?></h3>
+                            <?php if (trim((string) $homePage['summary']) !== ''): ?>
+                                <p><?= e($homePage['summary']) ?></p>
+                            <?php endif; ?>
+                            <span class="page-card__more">Llegir-ne més →</span>
+                        </span>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
 <section class="section" id="inscripcions">
     <div class="wrap">
         <div class="section__head">

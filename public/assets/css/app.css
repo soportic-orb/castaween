@@ -790,6 +790,132 @@ legend { font-weight: 800; font-size: 1.05rem; padding: 0; margin-bottom: 4px; }
 body { display: flex; flex-direction: column; min-height: 100vh; }
 main { flex: 1 0 auto; }
 
+/* Informació bàsica de protecció de dades (primera capa) al formulari. */
+.privacy-basic {
+    margin: 16px 0 0; padding: 12px 14px; border-radius: var(--pdsh-radius-sm);
+    background: var(--pdsh-cream); color: var(--pdsh-muted); font-size: .8rem; line-height: 1.5;
+}
+.privacy-basic strong { color: var(--pdsh-ink); }
+
+/* ------------------------------------------------- Pàgines de contingut */
+
+.page-head--cover {
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--pdsh-ink) 55%, transparent), color-mix(in srgb, var(--pdsh-primary) 88%, transparent)),
+        var(--cover) center / cover no-repeat,
+        var(--pdsh-primary);
+    padding-block: clamp(56px, 10vw, 110px) clamp(28px, 4vw, 40px);
+}
+
+.draft-bar { background: var(--pdsh-accent); color: var(--pdsh-ink); font-size: .92rem; padding: 10px 0; }
+.draft-bar a { color: var(--pdsh-ink); font-weight: 800; margin-left: 8px; }
+
+/* Text de les pàgines del CMS. */
+.prose { font-size: 1.02rem; line-height: 1.7; }
+.prose > :first-child { margin-top: 0; }
+.prose > :last-child { margin-bottom: 0; }
+.prose h2 {
+    font-size: 1.35rem; color: var(--pdsh-primary); margin: 1.8em 0 .55em;
+    padding-bottom: .3em; border-bottom: 2px solid var(--pdsh-line);
+}
+.prose h3 { font-size: 1.1rem; margin: 1.4em 0 .4em; }
+.prose h4 { font-size: 1rem; margin: 1.2em 0 .3em; }
+.prose p, .prose ul, .prose ol { margin: 0 0 1em; }
+.prose ul, .prose ol { padding-left: 1.3em; }
+.prose li { margin-bottom: .35em; }
+.prose li::marker { color: var(--pdsh-secondary); }
+.prose a { font-weight: 700; overflow-wrap: anywhere; }
+.prose hr { border: 0; border-top: 2px dashed var(--pdsh-line); margin: 2em 0; }
+.prose code { font-size: .88em; background: var(--pdsh-cream); padding: 1px 6px; border-radius: 5px; }
+.prose blockquote {
+    margin: 0 0 1.2em; padding: 14px 18px; border-radius: var(--pdsh-radius-sm);
+    background: color-mix(in srgb, var(--pdsh-accent) 16%, var(--pdsh-surface));
+    border-left: 5px solid var(--pdsh-accent);
+}
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose figure { margin: 1.4em 0; }
+.prose figure img, .prose p img { border-radius: var(--pdsh-radius-sm); }
+.prose figcaption { font-size: .86rem; color: var(--pdsh-muted); margin-top: 6px; text-align: center; }
+.prose-table { overflow-x: auto; margin: 0 0 1.2em; border: 1px solid var(--pdsh-line); border-radius: var(--pdsh-radius-sm); }
+.prose table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.prose th, .prose td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--pdsh-line); vertical-align: top; }
+.prose th { background: var(--pdsh-cream); font-weight: 800; }
+.prose tr:last-child td { border-bottom: 0; }
+mark.pending { background: #FFE7A3; color: #6B4A00; padding: 0 4px; border-radius: 4px; font-weight: 700; }
+
+/* Pàgines destacades a la portada. */
+.page-cards { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.page-card {
+    display: flex; flex-direction: column; background: var(--pdsh-surface);
+    border: 2px solid var(--pdsh-line); border-radius: var(--pdsh-radius); overflow: hidden;
+    color: var(--pdsh-ink); text-decoration: none;
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.page-card:hover { border-color: var(--pdsh-secondary); transform: translateY(-2px); box-shadow: var(--pdsh-shadow); color: var(--pdsh-ink); }
+.page-card__image { aspect-ratio: 16 / 9; max-width: 100%; background: var(--pdsh-primary) center / cover no-repeat; display: grid; place-items: center; }
+.page-card__image svg { width: 64px; height: 64px; }
+.page-card__body { padding: 18px 20px 20px; display: grid; gap: 6px; }
+.page-card__body h3 { font-family: var(--pdsh-font-display); font-weight: 400; font-size: 1.6rem; color: var(--pdsh-primary); margin: 0; letter-spacing: .02em; }
+.page-card__body p { margin: 0; color: var(--pdsh-muted); font-size: .95rem; }
+.page-card__more { font-weight: 800; color: var(--pdsh-secondary); font-size: .92rem; }
+
+/* Enllaços legals del peu. */
+.site-footer__legal {
+    margin-top: 26px; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: .88rem;
+}
+.site-footer__legal a { color: rgba(251, 244, 230, .82); }
+.link-button {
+    background: none; border: 0; padding: 0; font: inherit; color: var(--pdsh-accent);
+    text-decoration: underline; text-underline-offset: 2px; cursor: pointer;
+}
+
+/* ------------------------------------------------------- Bàner de galetes */
+
+.cookie-banner {
+    position: fixed; z-index: 1000; left: 16px; right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    max-width: 980px; margin: 0 auto;
+    background: var(--pdsh-ink); color: var(--pdsh-cream);
+    border: 1px solid rgba(251, 244, 230, .14); border-top: 4px solid var(--pdsh-secondary);
+    border-radius: var(--pdsh-radius); box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
+    animation: pdsh-rise .35s ease-out both;
+}
+@keyframes pdsh-rise { from { transform: translateY(24px); opacity: 0; } }
+.cookie-banner__inner {
+    display: grid; gap: 16px 20px; padding: 18px 22px;
+    grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center;
+}
+.cookie-banner__icon svg { width: 44px; height: 44px; display: block; }
+.cookie-banner h2 { font-family: var(--pdsh-font-display); font-weight: 400; font-size: 1.5rem; color: var(--pdsh-secondary); margin: 0 0 4px; letter-spacing: .02em; }
+.cookie-banner p { margin: 0 0 6px; font-size: .9rem; line-height: 1.5; color: rgba(251, 244, 230, .88); }
+.cookie-banner__more { font-size: .85rem; }
+.cookie-banner a { color: var(--pdsh-accent); }
+.cookie-banner__actions { display: grid; gap: 8px; min-width: 210px; }
+.cookie-banner__prefs { display: grid; gap: 8px; margin-top: 10px; }
+.cookie-option {
+    display: flex; gap: 10px; align-items: flex-start; font-size: .88rem; cursor: pointer;
+    background: rgba(251, 244, 230, .06); border: 1px solid rgba(251, 244, 230, .14);
+    border-radius: var(--pdsh-radius-sm); padding: 10px 12px;
+}
+.cookie-option input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--pdsh-secondary); flex: 0 0 auto; }
+.cookie-option small { color: rgba(251, 244, 230, .7); }
+.btn--ghost-light { background: transparent; border-color: rgba(251, 244, 230, .5); color: var(--pdsh-cream); }
+.btn--ghost-light:hover { border-color: var(--pdsh-cream); background: rgba(251, 244, 230, .08); color: #fff; }
+
+/* Amb el bàner obert, el peu queda visible per sobre seu. */
+body.has-cookie-banner { padding-bottom: 220px; }
+
+@media (max-width: 760px) {
+    .cookie-banner__inner { grid-template-columns: minmax(0, 1fr); padding: 16px 18px; }
+    .cookie-banner__icon { display: none; }
+    .cookie-banner__actions { min-width: 0; }
+    body.has-cookie-banner { padding-bottom: 360px; }
+}
+
+@media print {
+    .cookie-banner { display: none !important; }
+}
+
 /* ---------------------------------------- Castanyes i fulles que cauen */
 
 #confetti-canvas {

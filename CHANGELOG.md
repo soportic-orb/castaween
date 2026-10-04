@@ -9,6 +9,34 @@ Actualitzacions i a la barra lateral.
 
 ---
 
+## [1.1.0] — 2026-10-04
+
+### Afegit
+
+- **Pàgines (petit CMS)** al Panell de Gestió → *Pàgines*: crear, editar,
+  publicar o deixar en esborrany pàgines d'informació (el túnel del terror,
+  horaris, com arribar…). Cada pàgina pot sortir al menú de dalt, a la portada
+  (com a targeta) o al peu, i pot tenir imatge de capçalera. El text admet un
+  format senzill (títols, negreta, llistes, enllaços, imatges, taules i
+  requadres) i no permet HTML. Els esborranys només els veu l'organització.
+- **Textos legals** publicats per defecte: *Avís legal*, *Política de
+  privacitat*, *Condicions d'ús i de compra* (amb les normes del túnel del
+  terror) i *Política de galetes*. Es poden editar però no eliminar.
+- Marcadors `{{titular}}`, `{{nif}}`, `{{domicili}}`… que omplen els textos amb
+  les **dades legals** noves de *Configuració → Esdeveniment*. Mentre falten,
+  el web hi mostra un avís «pendent» i el resum del panell ho recorda.
+- Pàgina de mostra **El túnel del terror**, en esborrany, per completar.
+- **Bàner de galetes** (RGPD i LSSI-CE): acceptar, rebutjar o configurar amb el
+  mateix pes, preferència desada 6 mesos i enllaç «Configurar galetes» al peu.
+  Si no hi ha Google Analytics configurat, només informa de les galetes
+  tècniques.
+
+### Canviat
+
+- Google Analytics ja no es carrega mai sense el consentiment del visitant.
+- El formulari d'inscripció enllaça les condicions i la política de privacitat
+  i mostra la informació bàsica de protecció de dades.
+
 ## [1.0.0] — 2026-10-04
 
 Primera versió de la plataforma de la **Castanyada terrorífica a La Granada**,

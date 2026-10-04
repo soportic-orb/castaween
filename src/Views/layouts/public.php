@@ -24,7 +24,12 @@ use App\Core\View;
         </a>
 
         <nav class="site-nav" aria-label="Navegació principal">
-            <a data-nav="info" href="<?= e(url('/')) ?>#informacio">Informació</a>
+            <?php foreach (\App\Services\Pages::menu() as $menuPage): ?>
+                <a data-nav="page" href="<?= e(\App\Services\Pages::url($menuPage)) ?>"><?= e($menuPage['title']) ?></a>
+            <?php endforeach; ?>
+            <?php if (\App\Services\Pages::menu() === []): ?>
+                <a data-nav="info" href="<?= e(url('/')) ?>#informacio">Informació</a>
+            <?php endif; ?>
             <a href="<?= e(url('/les-meves-entrades')) ?>">Les meves entrades</a>
             <?php if (\App\Services\TicketService::salesOpen()): ?>
                 <a class="is-cta" href="<?= e(url('/')) ?>#inscripcions">Inscriure's</a>
@@ -69,10 +74,19 @@ use App\Core\View;
                 <h4>Entrades</h4>
                 <p>
                     <a href="<?= e(url('/les-meves-entrades')) ?>">Consultar o anul·lar la inscripció</a><br>
-                    <a href="<?= e(url('/informacio')) ?>">Condicions i privacitat</a>
+                    <a href="<?= e(url('/informacio')) ?>">Informació i anul·lacions</a>
+                    <?php foreach (\App\Services\Pages::footer() as $footerPage): if ($footerPage['system_key'] !== null) { continue; } ?>
+                        <br><a href="<?= e(\App\Services\Pages::url($footerPage)) ?>"><?= e($footerPage['title']) ?></a>
+                    <?php endforeach; ?>
                 </p>
             </div>
         </div>
+        <nav class="site-footer__legal" aria-label="Informació legal">
+            <?php foreach (\App\Services\Pages::footer() as $footerPage): if ($footerPage['system_key'] === null) { continue; } ?>
+                <a href="<?= e(\App\Services\Pages::url($footerPage)) ?>"><?= e($footerPage['title']) ?></a>
+            <?php endforeach; ?>
+            <button type="button" class="link-button" data-cookie-settings>Configurar galetes</button>
+        </nav>
         <div class="site-footer__bottom">
             <span>© <?= date('Y') ?> · <?= e(Settings::get('event_organizer')) ?></span>
             <span>Pagaments segurs amb Stripe · <?= e(\App\Core\Url::host()) ?></span>
@@ -84,14 +98,6 @@ use App\Core\View;
 <?php if (!empty($useConfetti)): ?>
     <script src="<?= e(asset('js/confetti.js')) ?>" defer></script>
 <?php endif; ?>
-<?php if (($ga = trim((string) Settings::get('google_analytics'))) !== ''): ?>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<?= e($ga) ?>"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '<?= e($ga) ?>');
-    </script>
-<?php endif; ?>
+<?= \App\Core\View::partial('layouts/_cookies') ?>
 </body>
 </html>

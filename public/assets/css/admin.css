@@ -333,3 +333,22 @@
 .manual-row__del:hover { color: var(--pdsh-danger); background: #FCEDEC; }
 
 .manual-row__extra { margin-top: 4px; }
+
+/* ------------------------------------------------------- Editor de pàgines */
+
+.page-editor { display: grid; gap: 20px; grid-template-columns: minmax(0, 1fr) 340px; align-items: start; }
+.page-editor__main, .page-editor__side { min-width: 0; display: grid; gap: 20px; }
+.page-editor .panel { margin-bottom: 0; }
+@media (max-width: 1100px) { .page-editor { grid-template-columns: minmax(0, 1fr); } }
+
+.textarea--code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: .9rem; line-height: 1.6; min-height: 420px;
+}
+
+.format-help table { width: 100%; border-collapse: collapse; font-size: .84rem; }
+.format-help td { padding: 5px 0; border-bottom: 1px solid var(--pdsh-line); vertical-align: top; }
+.format-help table { table-layout: fixed; }
+.format-help td:first-child { padding-right: 10px; width: 52%; }
+.format-help td { overflow-wrap: anywhere; }
+.format-help code { font-size: .8rem; background: #FAF7F1; padding: 1px 5px; border-radius: 4px; }

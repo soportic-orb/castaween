@@ -57,6 +57,7 @@ try {
             <i class="ico">✉</i> Comunicats
             <?php if ($queued > 0): ?><span class="pill"><?= (int) $queued ?></span><?php endif; ?>
         </a>
+        <a class="<?= trim($isActive('/admin/pagines')) ?>" href="<?= e(url('/admin/pagines')) ?>"><i class="ico">📄</i> Pàgines</a>
 
         <span class="admin-nav__group">Configuració</span>
         <a class="<?= $path === '/admin/configuracio' ? 'is-active' : '' ?>" href="<?= e(url('/admin/configuracio')) ?>"><i class="ico">◉</i> Esdeveniment</a>

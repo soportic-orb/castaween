@@ -194,13 +194,26 @@ $errors = $errors ?? [];
                             <label class="check">
                                 <input type="checkbox" name="terms" value="1" required>
                                 <span>
-                                    Accepto les condicions de la inscripció i la
-                                    <a href="<?= e(url('/informacio')) ?>" target="_blank" rel="noopener">política d'anul·lacions</a>. *
+                                    He llegit i accepto les
+                                    <a href="<?= e(\App\Services\Pages::urlFor(\App\Services\Pages::TERMS)) ?>" target="_blank" rel="noopener">condicions d'ús i de compra</a>,
+                                    inclosa la <a href="<?= e(url('/informacio')) ?>" target="_blank" rel="noopener">política d'anul·lacions</a>,
+                                    i la <a href="<?= e(\App\Services\Pages::urlFor(\App\Services\Pages::PRIVACY)) ?>" target="_blank" rel="noopener">política de privacitat</a>. *
                                 </span>
                             </label>
                             <?php if (isset($errors['terms'])): ?><span class="field__error"><?= e($errors['terms']) ?></span><?php endif; ?>
                         </div>
                     <?php endif; ?>
+
+                    <?php $holder = trim((string) Settings::get('legal_holder')) ?: (string) Settings::get('event_organizer'); ?>
+                    <p class="privacy-basic">
+                        <strong>Protecció de dades.</strong>
+                        Responsable: <?= e($holder) ?>.
+                        Finalitat: gestionar la inscripció, el pagament, l'enviament de les entrades i el control d'accés.
+                        Base legal: execució del contracte i, per a les dades de salut que ens indiquis, el teu consentiment.
+                        Destinataris: Stripe, per al pagament; no es cedeixen dades a tercers tret d'obligació legal.
+                        Drets: accés, rectificació, supressió i altres, escrivint a l'organització.
+                        <a href="<?= e(\App\Services\Pages::urlFor(\App\Services\Pages::PRIVACY)) ?>" target="_blank" rel="noopener">Més informació</a>.
+                    </p>
                 </div>
             </div>
 

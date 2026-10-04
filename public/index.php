@@ -75,6 +75,7 @@ $router->group([$maintenance, $csrf], static function (Router $r): void {
 
     $r->get('/e/{code}',              [Web\TicketController::class, 'show']);
     $r->get('/informacio',            [Web\HomeController::class, 'info']);
+    $r->get('/pagina/{slug:[a-z0-9-]+}', [Web\PageController::class, 'show']);
 });
 
 // Stripe crida aquest punt sense sessió ni testimoni CSRF: es valida per signatura.
@@ -116,6 +117,14 @@ $router->group([$csrf, [Auth::class, 'requireLogin']], static function (Router $
     $r->post('/admin/tipus-inscripcio/{id:\d+}',       [Admin\TicketTypeController::class, 'update']);
     $r->post('/admin/tipus-inscripcio/{id:\d+}/estat', [Admin\TicketTypeController::class, 'toggle']);
     $r->post('/admin/tipus-inscripcio/{id:\d+}/eliminar', [Admin\TicketTypeController::class, 'destroy']);
+
+    $r->get('/admin/pagines',                  [Admin\PageController::class, 'index']);
+    $r->get('/admin/pagines/nova',             [Admin\PageController::class, 'create']);
+    $r->post('/admin/pagines/nova',            [Admin\PageController::class, 'store']);
+    $r->get('/admin/pagines/{id:\d+}',         [Admin\PageController::class, 'edit']);
+    $r->post('/admin/pagines/{id:\d+}',        [Admin\PageController::class, 'update']);
+    $r->post('/admin/pagines/{id:\d+}/estat',  [Admin\PageController::class, 'toggle']);
+    $r->post('/admin/pagines/{id:\d+}/eliminar', [Admin\PageController::class, 'destroy']);
 
     $r->get('/admin/comunicacions',            [Admin\CampaignController::class, 'index']);
     $r->get('/admin/comunicacions/nova',       [Admin\CampaignController::class, 'create']);

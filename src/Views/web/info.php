@@ -64,6 +64,18 @@ $deadline = TicketService::cancellationDeadline();
             </div>
         </div>
 
+        <div class="card" style="margin-bottom:20px;">
+            <div class="card__body">
+                <h2 style="font-size:1.2rem;">Condicions i textos legals</h2>
+                <ul class="includes">
+                    <li><span><a href="<?= e(\App\Services\Pages::urlFor(\App\Services\Pages::TERMS)) ?>">Condicions d'ús i de compra</a>, amb les normes del túnel del terror</span></li>
+                    <li><span><a href="<?= e(\App\Services\Pages::urlFor(\App\Services\Pages::PRIVACY)) ?>">Política de privacitat</a></span></li>
+                    <li><span><a href="<?= e(\App\Services\Pages::urlFor(\App\Services\Pages::LEGAL_NOTICE)) ?>">Avís legal</a></span></li>
+                    <li><span><a href="<?= e(\App\Services\Pages::urlFor(\App\Services\Pages::COOKIES)) ?>">Política de galetes</a></span></li>
+                </ul>
+            </div>
+        </div>
+
         <?php if (trim((string) $privacy) !== ''): ?>
             <div class="card">
                 <div class="card__body">

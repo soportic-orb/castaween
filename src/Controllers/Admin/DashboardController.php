@@ -148,6 +148,14 @@ final class DashboardController
                 'optional' => true,
             ],
             [
+                'label' => 'Dades legals',
+                'ok'    => \App\Services\Pages::missingLegalData() === [],
+                'url'   => '/admin/configuracio#dades-legals',
+                'hint'  => \App\Services\Pages::missingLegalData() === []
+                    ? 'Avís legal, privacitat i condicions complets.'
+                    : 'Falta: ' . implode(', ', \App\Services\Pages::missingLegalData()) . '.',
+            ],
+            [
                 'label' => 'Inscripcions obertes',
                 'ok'    => TicketService::salesOpen(),
                 'url'   => '/admin/configuracio',

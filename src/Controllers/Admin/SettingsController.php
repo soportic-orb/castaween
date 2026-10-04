@@ -35,6 +35,7 @@ final class SettingsController
             'event_location', 'event_city', 'event_map_url', 'event_highlights', 'event_organizer',
             'event_contact_email', 'event_contact_phone', 'timezone', 'google_analytics',
             'terms_url', 'privacy_text', 'sales_closed_message',
+            'legal_holder', 'legal_nif', 'legal_address', 'legal_registry', 'legal_email',
         ], [
             'sales_open'        => 'bool',
             'require_terms'     => 'bool',

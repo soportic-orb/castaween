@@ -48,6 +48,13 @@ final class Settings
         'privacy_text'        => '',
         'require_terms'       => '1',
 
+        // Dades legals (avís legal, privacitat i condicions)
+        'legal_holder'        => 'AFA Jacint Verdaguer',
+        'legal_nif'           => '',
+        'legal_address'       => '',
+        'legal_registry'      => '',
+        'legal_email'         => '',
+
         // Anul·lacions
         'cancellation_enabled'       => '1',
         'cancellation_deadline_days' => '7',

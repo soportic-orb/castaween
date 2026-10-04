@@ -83,6 +83,43 @@ $s = $settings;
                     <label for="google_analytics">ID de Google Analytics</label>
                     <input class="input" type="text" id="google_analytics" name="google_analytics"
                            value="<?= e($s['google_analytics']) ?>" placeholder="G-XXXXXXXXXX">
+                    <span class="field__hint">Només es carrega si el visitant accepta les galetes d'analítica al bàner.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel" id="dades-legals">
+        <div class="panel__head">
+            <div>
+                <h2>Dades legals</h2>
+                <p>S'omplen automàticament a l'avís legal, la política de privacitat i les condicions.
+                   <a href="<?= e(url('/admin/pagines')) ?>">Editar els textos legals</a></p>
+            </div>
+        </div>
+        <div class="panel__body">
+            <div class="form-grid">
+                <div class="field">
+                    <label for="legal_holder">Titular del web (nom de l'entitat)</label>
+                    <input class="input" type="text" id="legal_holder" name="legal_holder" value="<?= e($s['legal_holder']) ?>" placeholder="AFA Jacint Verdaguer">
+                </div>
+                <div class="field">
+                    <label for="legal_nif">NIF de l'entitat</label>
+                    <input class="input" type="text" id="legal_nif" name="legal_nif" value="<?= e($s['legal_nif']) ?>" placeholder="G00000000">
+                </div>
+                <div class="field">
+                    <label for="legal_address">Domicili social</label>
+                    <input class="input" type="text" id="legal_address" name="legal_address" value="<?= e($s['legal_address']) ?>" placeholder="Carrer…, 08792 La Granada">
+                </div>
+                <div class="field">
+                    <label for="legal_registry">Inscripció registral</label>
+                    <input class="input" type="text" id="legal_registry" name="legal_registry" value="<?= e($s['legal_registry']) ?>"
+                           placeholder="Registre d'Entitats Jurídiques de Catalunya, núm. …">
+                </div>
+                <div class="field">
+                    <label for="legal_email">Correu per a temes legals i de privacitat</label>
+                    <input class="input" type="email" id="legal_email" name="legal_email" value="<?= e($s['legal_email']) ?>"
+                           placeholder="Si es deixa buit, es fa servir el correu de contacte">
                 </div>
             </div>
         </div>

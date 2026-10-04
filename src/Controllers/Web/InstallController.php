@@ -140,6 +140,7 @@ final class InstallController
         ]);
 
         $this->seedTicketTypes();
+        \App\Services\Pages::ensureDefaults();
 
         View::render('web/install_done', [
             'title'    => 'Instal·lació completada',

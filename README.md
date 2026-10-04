@@ -22,6 +22,21 @@ totes les seves funcionalitats i una imatge nova de nit de Halloween.
   que cauen a la pantalla de compra correcta. Les animacions s'aturen si la
   persona té activada l'opció de moviment reduït.
 
+## Pàgines i textos legals
+
+Des de *Panell de Gestió → Pàgines* es poden crear pàgines d'informació (per
+exemple, sobre el túnel del terror) i editar els textos legals: avís legal,
+política de privacitat, condicions d'ús i de compra i política de galetes. Els
+textos legals agafen el titular, el NIF, el domicili i el correu de
+*Configuració → Esdeveniment → Dades legals*.
+
+Els textos legals són una base pensada per a una associació que ven entrades
+d'un esdeveniment a Catalunya. **Convé que l'entitat els revisi** abans de
+publicar el web.
+
+El web mostra un bàner de galetes. Google Analytics, si es configura, només es
+carrega quan el visitant l'accepta.
+
 ## Primera posada en marxa
 
 L'instal·lador crea dos tipus d'entrada, **Entrada adult** i **Entrada infantil
@@ -30,7 +45,8 @@ inscripcions:
 
 1. *Tipus d'inscripció*: poseu el preu a cada entrada i activeu-les.
 2. *Configuració → Esdeveniment*: horari, lloc exacte, contacte, cartell i logotip.
-3. Completeu Stripe, el correu SMTP i la resta de la llista de comprovació del resum.
+3. *Configuració → Esdeveniment → Dades legals*: NIF, domicili i registre de l'AFA.
+4. Completeu Stripe, el correu SMTP i la resta de la llista de comprovació del resum.
 
 ---
 
